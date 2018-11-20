@@ -8,8 +8,8 @@ void func3(int& a)
 	int* c = (int*)malloc(sizeof(int)); // 调用malloc
 	*c = 10;
 	printf("p = %p\n",c);
-///	while(1)
-//	{}
+	//while(1)
+	{}
 	free(c);
 }
 
