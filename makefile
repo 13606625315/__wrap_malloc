@@ -3,12 +3,13 @@ CC = g++
 objects = main.o malloc.o 
 
 server: $(objects)
-	cc -g -o test $(objects) -Wl,--wrap=malloc -Wl,--wrap=free -m32
+	cc -g -o test $(objects) -Wl,--wrap=malloc -Wl,--wrap=free -m32 
+#-O2 -Os
 	
-main.o:
+main.o: main.cpp
 	cc -c main.cpp -m32
 	
-malloc.o:
+malloc.o: malloc.cpp
 	cc -c malloc.cpp -m32
 #比较稳健的clean做法，表示clean是一个伪目标
 .PHONY: clean
